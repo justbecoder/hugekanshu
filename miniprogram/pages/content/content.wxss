@@ -1,0 +1,38 @@
+/* pages/content/content.wxss */
+page {
+  background: #e8e5dc;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20rpx 20rpx;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  padding-bottom: 70rpx;
+}
+.chapter-content {
+  width: 100%;
+  margin-bottom: 24rpx;
+}
+.chapter-title {
+  font-size: 46rpx;
+  margin-bottom: 24rpx;
+  color: #744e43;
+  text-align: left;
+}
+.text {
+  color: #363635;
+  font-size: 40rpx;
+  word-break: break-all;
+}
+.menu {
+  width: 100%;
+  height: 60rpx;
+  background: #FFF;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  display: none;
+}

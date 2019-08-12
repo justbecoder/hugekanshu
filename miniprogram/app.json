@@ -1,0 +1,29 @@
+{
+  "pages": [
+    "pages/me/me",
+    "pages/index/index",
+    "pages/search/search",
+    "pages/list/list",
+    "pages/content/content"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "胡哥看书",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的"
+      }
+    ]	
+  },
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,10 @@
+<!--pages/me/me.wxml-->
+<view class="me">
+  <!-- 未登录 -->
+  <button wx:if="{{!userInfo}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" type="primary">登录可同步阅读进度</button>
+  <!-- 已登录 -->
+  <view class="userinfo" wx:if="{{ userInfo }}">
+    <image src="{{userInfo.avatarUrl}}"></image>
+    <text>{{ userInfo.nickName }}</text>
+  </view>
+</view>

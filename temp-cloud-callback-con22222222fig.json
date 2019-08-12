@@ -1,0 +1,10 @@
+{
+  "enable": true,
+  "callbacks": [
+    {
+      "msgType": 1,
+      "env": "jingquan-4c5550",
+      "functionName": "login"
+    }
+  ]
+}

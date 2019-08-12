@@ -1,0 +1,14 @@
+<!--pages/content/content.wxml-->
+<view class="content">
+  <!-- 展示章节内容 -->
+  <view class="chapter-content" wx:for="{{chapterContent}}" wx:for-index="{{index}}" wx:key="{{index}}">
+    <view class="chapter-title">{{ item.name }}</view>
+    <rich-text class="text" nodes="{{ item.content }}"></rich-text>
+  </view>
+  
+  <view class="menu">
+    <button class="menu-btn" bindtap="readPrev">上一章</button>
+    <button class="menu-btn" bindtap="jumpCatelog">目录</button>
+    <button class="menu-btn" bindtap="readNext">下一章</button>
+  </view>
+</view>

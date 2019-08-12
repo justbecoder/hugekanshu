@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class="container">
+  <navigator url="/pages/search/search" class="search-wrap" hover-class="none">
+    <view class="search">
+      请输入作者名或书名进行搜索
+    </view>
+    <view class="search-btn"></view>
+  </navigator>
+
+  <!--  阅读进度  -->
+  <view class="read-progress" wx:if="currentReadingChapterInfo">
+    <view>最近阅读章节：</view>
+    <navigator url="{{ '/pages/content/content?link=' + currentReadingChapterInfo.link }}">{{ currentReadingChapterInfo.name }}</navigator>
+  </view>
+
+  <!-- 热门小说 -->
+  <view class="hot-books-wrap">
+    <view class="hot-books">热门小说</view>
+    <view class="list">
+      <view class="item" wx:for-index="{{index}}" wx:key="{{index}}" wx:if="{{ hotBooks.length }}" wx:for="{{ hotBooks }}">
+        <navigator hover-class="none" class="item-link" url="{{'/pages/list/list?link=' + item.link}}">
+          <view class="item-link-img-wrap">
+            <image class="item-link-img" src="{{ item.image }}"></image>
+          </view>
+          <text class="item-link-text">{{ item.name }}</text>
+        </navigator>
+      </view>
+    </view>
+  </view>
+</view>

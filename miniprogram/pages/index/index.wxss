@@ -1,0 +1,125 @@
+/**index.wxss**/
+page {
+  background: #f6f6f6;
+  /* background: #FFF; */
+  display: flex;
+  /* flex-direction: column; */
+  /* justify-content: flex-start; */
+}
+.container {
+  width: 100%;
+  padding: 40rpx;
+  box-sizing: border-box;
+}
+.search-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  height: 60rpx;
+  justify-content: center;
+  position: relative;
+  /* background: #FFF; */
+}
+.search {
+  border: 2rpx solid #ccc;
+  border-radius: 60rpx;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  align-items: center;
+  color: #666;
+  font-size: 24rpx;
+  padding-left: 20rpx;
+}
+.search-btn {
+  position: absolute;
+  width: 80rpx;
+  height: 60rpx;
+  right: 20rpx;
+  top: 50%;
+  transform: translateY(-50%);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.search-btn::before {
+  width: 24rpx;
+  height: 24rpx;
+  content: "";
+  border: 2rpx solid #ccc;
+  display: block;
+  border-radius: 100%;
+  right: 14rpx;
+  position: absolute;
+  z-index: 2;
+  background: #FFF
+}
+.search-btn::after {
+  width: 30rpx;
+  height: 2rpx;
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0rpx;
+  top: 24rpx;
+  background: #ccc;
+  transform-origin: 0 0;
+  transform: rotate(30deg)
+}
+.input {
+  border: 1px solid #ccc;
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0 10px;
+  font-size: 28rpx;
+  flex-grow: 1;
+}
+.read-progress {
+  margin-top: 40rpx;
+}
+
+.hot-books-wrap {
+  margin-top: 40rpx;
+}
+.hot-books {
+  width: 124rpx;
+  padding-bottom: 10rpx;
+  border-bottom: 1px solid #ccc;
+}
+.hot-books-wrap .list {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 20rpx;
+}
+.hot-books-wrap .list .item {
+  width: 150rpx;
+  height: 280rpx;
+}
+.hot-books-wrap .item-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.hot-books-wrap .item-link-img-wrap {
+  width: 100%;
+  height: 220rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hot-books-wrap .item-link-img {
+  width: 160rpx;
+  height: 220rpx;
+  display: block;
+}
+.hot-books-wrap .item-link .item-link-text {
+  font-size: 32rpx;
+  color: #333;
+}
