@@ -37,12 +37,16 @@ Page({
   */
   doSearch () {
     let { keyworld } = this.data
+    wx.showLoading({
+      title: '查询中...'
+    })
     wx.cloud.callFunction({
       name: 'getSearchResult',
       data: {
         keyworld
       },
       success: (res) => {
+        wx.hideLoading()
         this.setData({
           books: res.result
         })

@@ -1,0 +1,51 @@
+<!--pages/list/list.wxml-->
+<view class="book-info" wx:if="{{basicInfo}}">
+  <view class="basic-info">
+    <image class="book-image" src="{{basicInfo.image}}"></image>
+    <view class="info">
+      <view class="name">{{ basicInfo.name }}</view>
+      <view class="other-info">
+        <view class="author">{{ basicInfo.author }}</view>
+        <view class="line"></view>
+        <view class="type">都市生活</view>
+        <view class="line"></view>
+        <view class="status">连载中</view>
+      </view>
+      <view class="last-modify-time">2019-08-22 11:11:11</view>
+    </view>
+  </view>
+  <view class="intro">
+    <rich-text class="text" nodes="{{ basicInfo.intro }}"></rich-text>
+  </view>
+  <view class="cate">
+    <view class="cate-title-wrap">
+      <view class="cate-title">
+        <view class="title">目录</view>
+        <view class="number">共{{ catelog.length }}章</view>
+      </view>
+      <view class="cate-sort" bindtap="sortCatelog">{{ sortUp ? '倒序' : '正序' }}</view>
+    </view>
+    <view class="cate-list">
+      <navigator class="cate-item new" url="{{'/pages/content/content?link=' + basicInfo.lastChapter.link}}">{{ basicInfo.lastChapter.name }}</navigator>
+      <navigator class="cate-item" wx:key="{{index}}" wx:for="{{currentCatelog}}" wx:for-index="{{index}}" url="{{'/pages/content/content?link=' + item.link}}">{{item.name}}</navigator>
+    </view>
+      <view class="page">
+        <view bindtap="changePage" data-type="home" class="page-item {{ currentPage === 1 ? 'disabled' : '' }}">首页</view>
+        <view class="page-item line"></view>
+        <view bindtap="changePage" data-type="prev" class="page-item {{ currentPage === 1 ? 'disabled' : '' }}">上一页</view>
+        <view class="page-item line"></view>
+        <picker mode="selector" bindchange="getPickerPage" range="{{pageList}}" class="page-item num">{{currentPage}}/{{totalPage}}</picker>
+        <view class="page-item line"></view>
+        <view bindtap="changePage" data-type="next" class="page-item {{ currentPage === totalPage ? 'disabled' : '' }}">下一页</view>
+        <view class="page-item line"></view>
+        <view bindtap="changePage" data-type="end" class="page-item {{ currentPage === totalPage ? 'disabled' : '' }}">尾页</view>
+      </view>
+  </view>
+  <!-- 底部菜单 -->
+  <view class="menu">
+    <view class="menu-item">加入书架</view>
+    <view class="menu-item read">免费阅读</view>
+    <view class="menu-item">分享书籍</view>
+  </view>
+</view>
+

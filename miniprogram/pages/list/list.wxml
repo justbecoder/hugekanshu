@@ -1,5 +1,0 @@
-<!--pages/list/list.wxml-->
-<view>目录</view>
-<view wx:key="{{index}}" wx:for="{{catelog}}" wx:for-index="{{index}}">
-  <navigator url="{{'/pages/content/content?link=' + item.link}}">{{item.name}}</navigator>
-</view>

@@ -1,31 +1,18 @@
-// pages/list/list.js
+// pages/bookStore/bookStore.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    link: '',
-    catelog: []
+
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
-    wx.cloud.callFunction({
-      name: 'getBookCatelog',
-      data: {
-        link: options.link
-      },
-      success: (res) => {
-        console.log(res)
-        this.setData({
-          catelog: res.result
-        })
-      }
-    })
+
   },
 
   /**

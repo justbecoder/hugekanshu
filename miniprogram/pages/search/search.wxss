@@ -20,12 +20,12 @@
   height: 100%;
   box-sizing: border-box;
   position: relative;
-  display: flex;
   align-items: center;
   color: #666;
   font-size: 24rpx;
   padding-left: 20rpx;
-  padding-right: 100rpx;
+  padding-right: 80rpx;
+  display: block;
 }
 .search-btn {
   position: absolute;

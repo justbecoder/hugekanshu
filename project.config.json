@@ -20,7 +20,7 @@
 	},
 	"appid": "wxaeb3b2653660b773",
 	"projectname": "hugekanshu",
-	"libVersion": "2.8.0",
+	"libVersion": "2.8.1",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
@@ -41,7 +41,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
@@ -54,6 +54,13 @@
 					"name": "pages/content/content",
 					"pathName": "pages/content/content",
 					"query": "link=https://www.booktxt.com/0_24/107339.html",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "获取图书信息",
+					"pathName": "pages/bookInfo/bookInfo",
+					"query": "link=https://www.booktxt.com/0_18/",
 					"scene": null
 				}
 			]
