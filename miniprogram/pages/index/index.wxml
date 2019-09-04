@@ -8,7 +8,7 @@
   </navigator>
 
   <!--  阅读进度  -->
-  <view class="read-progress" wx:if="{{record.length}}">
+  <view class="read-progress" wx:if="{{record}}">
     <view class="time"></view>
     <navigator class="record-info" hover-class="none" url="{{ '/pages/content/content?link=' + record.lastChapterInfo.link + '&name=' + record.name }}">
       <view class="name">继续阅读《{{ record.name }}》</view>

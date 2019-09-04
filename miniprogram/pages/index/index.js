@@ -7,7 +7,7 @@ Page({
     keyworld: '',
     avatarUrl: '',
     userInfo: undefined,
-    record: []
+    record: undefined
   },
 
   onLoad: function() {
@@ -42,8 +42,8 @@ Page({
     wx.getStorage({
       key: 'readingRecords',
       success: (res) => {
+        console.log(res.data)
         if (res.data) {
-          console.log(res.data)
           this.setData({
             record: res.data[0]
           })

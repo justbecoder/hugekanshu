@@ -1,2 +1,7 @@
 <!--pages/bookStore/bookStore.wxml-->
-<text>我的书架</text>
+<view class="container">
+  <view class="tabbar">
+    <view class="tab">书架</view>
+    <view class="tab">阅读记录</view>
+  </view>
+</view>

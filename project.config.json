@@ -41,7 +41,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -61,6 +61,13 @@
 					"name": "获取图书信息",
 					"pathName": "pages/bookInfo/bookInfo",
 					"query": "link=https://www.booktxt.com/0_18/",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "书架",
+					"pathName": "pages/bookStore/bookStore",
+					"query": "",
 					"scene": null
 				}
 			]

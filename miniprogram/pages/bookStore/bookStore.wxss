@@ -1,1 +1,10 @@
 /* pages/bookStore/bookStore.wxss */
+.tabbar {
+  display: flex;
+  height: 100rpx;
+  align-items: center;
+}
+.tabbar .tab {
+  flex-grow: 1;
+  border-bottom: 2rpx solid #f00;
+}
