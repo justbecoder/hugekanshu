@@ -7,7 +7,7 @@ Page({
     keyworld: '',
     avatarUrl: '',
     userInfo: undefined,
-    record: undefined
+    record: []
   },
 
   onLoad: function() {
@@ -43,6 +43,7 @@ Page({
       key: 'readingRecords',
       success: (res) => {
         if (res.data) {
+          console.log(res.data)
           this.setData({
             record: res.data[0]
           })
