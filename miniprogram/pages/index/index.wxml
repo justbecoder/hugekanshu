@@ -8,9 +8,12 @@
   </navigator>
 
   <!--  阅读进度  -->
-  <view class="read-progress" wx:if="currentReadingChapterInfo">
-    <view>最近阅读章节：</view>
-    <navigator url="{{ '/pages/content/content?link=' + currentReadingChapterInfo.link }}">{{ currentReadingChapterInfo.name }}</navigator>
+  <view class="read-progress" wx:if="record">
+    <view class="time"></view>
+    <navigator class="record-info" hover-class="none" url="{{ '/pages/content/content?link=' + record.lastChapterInfo.link + '&name=' + record.name }}">
+      <view class="name">继续阅读《{{ record.name }}》</view>
+      <view class="chapter-name">已阅读至 {{record.lastChapterInfo.name}}</view>   
+    </navigator>
   </view>
 
   <!-- 热门小说 -->

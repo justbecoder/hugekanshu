@@ -153,6 +153,12 @@ Page({
     })
   },
 
+  /**
+   * addBookToStore() 添加书籍到书架
+   */
+  addBookToStore (bookInfo) {
+    
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -17,7 +17,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getChapterContent(options.link)
+    this.setData({
+      name: options.name
+    }, () => {
+      this.getChapterContent(options.link)
+    })
+    wx.setNavigationBarTitle({
+      title: options.name
+    })
   },
 
   /**
@@ -53,7 +60,7 @@ Page({
         /**
          * 注意：
          *  在执行请求刷新时，如果是上拉刷新就更新next;如果是下拉刷新就更新prev
-         * 如果prev和next是不存在的，说明是初始化，直接进行赋值操作
+         *  如果prev和next是不存在的，说明是初始化，直接进行赋值操作
         */
         if (refreshDirection === 'up') {
           this.setData({
@@ -74,23 +81,45 @@ Page({
             })
           }
         }
+        let catelog = res.result.catelog
         this.setData({
-          catelog: res.result.catelog,
+          // 书籍目录
+          catelog,
+          // 章节内容
           chapterContent
         })
 
         /**
-         * 将当前的章节信息存储到本地
-         *  后期可考虑如果用户已登录，写入到用户的数据库中
-        */
-        wx.setStorage({
-          key: 'currentReadingChapterInfo',
-          data: {
+         * 本地阅读记录 - localStorage
+         */
+        let readingRecords = wx.getStorageSync('readingRecords') || []
+        // 判断当前阅读信息是否已存在与书籍中
+        let record = {
+          name: this.data.name,
+          catelog,
+          lastChapterInfo: {
             name: res.result.name,
             link
           }
+        }
+        let index
+        readingRecords.map((item, i) => {
+          // 判断
+          if (item.name === record.name && item.catelog === record.catelog) {
+            index = i
+            return
+          }
         })
-
+        if (index !== undefined) {
+          readingRecords.slice(index, 1)
+        }
+        readingRecords.unshift(record)
+        // 设置最新阅读记录
+        wx.setStorage({
+          key: 'readingRecords',
+          data: readingRecords
+        });
+          
         wx.hideLoading()
       }
     })

@@ -7,7 +7,7 @@ Page({
     keyworld: '',
     avatarUrl: '',
     userInfo: undefined,
-    currentReadingChapterInfo: undefined
+    record: undefined
   },
 
   onLoad: function() {
@@ -40,11 +40,11 @@ Page({
   onShow () {
     // 读取本地存储的阅读进度
     wx.getStorage({
-      key: 'currentReadingChapterInfo',
+      key: 'readingRecords',
       success: (res) => {
         if (res.data) {
           this.setData({
-            currentReadingChapterInfo: res.data
+            record: res.data[0]
           })
         }
       },

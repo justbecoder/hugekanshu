@@ -79,6 +79,26 @@ page {
 }
 .read-progress {
   margin-top: 40rpx;
+  /* background: #FFF; */
+  display: flex;
+  align-items: center;
+}
+.read-progress .time {
+  /* width: 60rpx; */
+  /* height: 60rpx; */
+  margin-right: 20rpx;
+}
+.read-progress .record-info {
+  flex-grow: 1;
+}
+.read-progress .name {
+  font-size: 32rpx;
+  color: #000;
+}
+.read-progress .chapter-name {
+  color: #ccc;
+  font-size: 24rpx;
+  margin-top: 4rpx;
 }
 
 .hot-books-wrap {

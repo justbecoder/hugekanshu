@@ -26,8 +26,8 @@
       <view class="cate-sort" bindtap="sortCatelog">{{ sortUp ? '倒序' : '正序' }}</view>
     </view>
     <view class="cate-list">
-      <navigator class="cate-item new" url="{{'/pages/content/content?link=' + basicInfo.lastChapter.link}}">{{ basicInfo.lastChapter.name }}</navigator>
-      <navigator class="cate-item" wx:key="{{index}}" wx:for="{{currentCatelog}}" wx:for-index="{{index}}" url="{{'/pages/content/content?link=' + item.link}}">{{item.name}}</navigator>
+      <navigator class="cate-item new" url="{{'/pages/content/content?link=' + basicInfo.lastChapter.link + '&name=' + basicInfo.name}}">{{ basicInfo.lastChapter.name }}</navigator>
+      <navigator class="cate-item" wx:key="{{index}}" wx:for="{{currentCatelog}}" wx:for-index="{{index}}" url="{{'/pages/content/content?link=' + item.link + '&name=' + basicInfo.name}}">{{item.name}}</navigator>
     </view>
       <view class="page">
         <view bindtap="changePage" data-type="home" class="page-item {{ currentPage === 1 ? 'disabled' : '' }}">首页</view>
@@ -43,7 +43,7 @@
   </view>
   <!-- 底部菜单 -->
   <view class="menu">
-    <view class="menu-item">加入书架</view>
+    <view bindtap="addBookToStore" class="menu-item">加入书架</view>
     <view class="menu-item read">免费阅读</view>
     <view class="menu-item">分享书籍</view>
   </view>
