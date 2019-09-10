@@ -42,7 +42,6 @@ Page({
     wx.getStorage({
       key: 'readingRecords',
       success: (res) => {
-        console.log(res.data)
         if (res.data) {
           this.setData({
             record: res.data[0]

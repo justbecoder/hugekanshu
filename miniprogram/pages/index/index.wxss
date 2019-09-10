@@ -96,7 +96,7 @@ page {
   color: #000;
 }
 .read-progress .chapter-name {
-  color: #ccc;
+  color: #666;
   font-size: 24rpx;
   margin-top: 4rpx;
 }
