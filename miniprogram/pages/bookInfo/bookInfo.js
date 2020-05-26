@@ -33,7 +33,8 @@ Page({
         wx.hideLoading()
         this.setData({
           catelog: res.result.bookCatelog,
-          basicInfo: res.result.basicInfo
+          basicInfo: res.result.basicInfo,
+          link: options.link
         }, () => {
           this.initPage()
         })
@@ -156,8 +157,25 @@ Page({
   /**
    * addBookToStore() 添加书籍到书架
    */
-  addBookToStore (bookInfo) {
-    
+  addBookToStore () {
+    let { basicInfo, link } = this.data
+    console.log(basicInfo, link)
+    wx.cloud.callFunction({
+      name: 'addBookToStore',
+      data: {
+        bookInfo: {
+          name: basicInfo.name,
+          author: basicInfo.author,
+          image: basicInfo.image,
+          link
+        }
+      },
+      success (res) {
+        wx.showToast({
+          title: '加入书架成功!'
+        })
+      }
+    })
   },
 
   /**

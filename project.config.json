@@ -20,7 +20,7 @@
 	},
 	"appid": "wxaeb3b2653660b773",
 	"projectname": "hugekanshu",
-	"libVersion": "2.8.1",
+	"libVersion": "2.8.2",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
 	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
@@ -41,7 +41,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 4,
 			"list": [
 				{
 					"id": -1,
@@ -68,6 +68,12 @@
 					"name": "书架",
 					"pathName": "pages/bookStore/bookStore",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/search/search",
+					"pathName": "pages/search/search",
 					"scene": null
 				}
 			]

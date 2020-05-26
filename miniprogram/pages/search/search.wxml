@@ -8,10 +8,10 @@
   <view class="books-wrap">
     <view class="books-title">搜索结果</view>
     <view class="list" wx:if="{{ books && books.length }}">
-      <view class="item" wx:for-index="{{index}}" wx:key="{{index}}" wx:for="{{ books }}">
+      <view class="item" wx:for-index="index" wx:key="{{ index }}" wx:for="{{ books }}">
         <navigator hover-class="none" class="item-link" url="{{'/pages/bookInfo/bookInfo?link=' + item.link}}">
           <view class="item-link-img-wrap">
-            <image class="item-link-img" src="{{ item.image }}"></image>
+            <image class="item-link-img" data-show="{{ item.show == undefined ? false : true }}" data-index="{{ index }}" data-src="{{ item.image }}" src="{{ item.show ? item.image : '/images/nocover.jpg' }}"></image>
           </view>
           <view class="item-link-intro">
             <view class="item-link-intro-text">{{ item.name }}</view>

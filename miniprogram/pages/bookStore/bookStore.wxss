@@ -1,10 +1,18 @@
 /* pages/bookStore/bookStore.wxss */
 .tabbar {
   display: flex;
-  height: 100rpx;
+  height: 80rpx;
   align-items: center;
 }
 .tabbar .tab {
   flex-grow: 1;
-  border-bottom: 2rpx solid #f00;
+  height: 100%;
+  width: 50%;
+  border-bottom: 2rpx solid #ededed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tabbar .tab.active {
+  border-bottom-color: #f00;
 }

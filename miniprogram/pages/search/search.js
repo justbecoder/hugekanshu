@@ -13,13 +13,23 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // console.log(options)
-    // this.doSearch(options.keyworld)
-    // this.setData({
-    //   keyworld: '农民'
-    // }, () => {
-    //   this.doSearch()
-    // })
+  },
+
+  lazyLoadObserve () {
+    let intersectionObserver = wx.createIntersectionObserver(this, {
+      observeAll: true
+    })
+    intersectionObserver.relativeToViewport({ bottom: 100 }).observe('.item-link-img', (res) => {
+      if (!res.dataset.show) {
+        let { books } = this.data
+        books[res.dataset.index].show = true
+        this.setData({
+          books
+        })
+      } else {
+        return
+      }
+    })
   },
 
   /**
@@ -49,6 +59,8 @@ Page({
         wx.hideLoading()
         this.setData({
           books: res.result
+        }, () => {
+          this.lazyLoadObserve()
         })
       }
     })

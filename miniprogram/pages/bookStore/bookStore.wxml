@@ -1,7 +1,7 @@
 <!--pages/bookStore/bookStore.wxml-->
 <view class="container">
   <view class="tabbar">
-    <view class="tab">书架</view>
-    <view class="tab">阅读记录</view>
+    <view ontap="changeTab" data-tab="1" class="tab {{ tab === 1 ? 'active' : '' }}">书架</view>
+    <view ontap="changeTab" data-tab="2" class="tab {{ tab === 2 ? 'active' : '' }}">阅读记录</view>
   </view>
 </view>
