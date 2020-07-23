@@ -6,7 +6,10 @@ Page({
    */
   data: {
     // tab: 1 书架 2 阅读记录
-    tab: 1
+    tab: 1,
+
+    // 书架
+    bookStore: []
   },
 
   changeTab (e) {
@@ -32,8 +35,13 @@ Page({
   getBookStoreAction () {
     wx.cloud.callFunction({
       name: 'getBookStoreInfo',
-      success (res) {
+      success: (res) => {
         console.log(res)
+        if (res.result) {
+          this.setData({
+            bookStore: res.result
+          })
+        }
       }
     })
   },

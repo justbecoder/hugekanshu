@@ -9,7 +9,12 @@ const db = cloud.database()
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
   let openid = wxContext.OPENID
-  return await db.collection('bookStore').where({
+  console.log(openid)
+  let data = await db.collection('bookStore').where({
     openid
-  }).get('')
+  }).get()
+  
+  let [{ bookStore = [] }] = data.data
+  console.log(bookStore)
+  return bookStore
 }

@@ -20,7 +20,7 @@
   <view class="hot-books-wrap">
     <view class="hot-books">热门小说</view>
     <view class="list">
-      <view class="item" wx:for-index="{{index}}" wx:key="{{index}}" wx:if="{{ hotBooks.length }}" wx:for="{{ hotBooks }}">
+      <view class="item" wx:for-index="{{index}}" wx:key="index" wx:if="{{ hotBooks.length }}" wx:for="{{ hotBooks }}">
         <navigator hover-class="none" class="item-link" url="{{'/pages/bookInfo/bookInfo?link=' + item.link}}">
           <view class="item-link-img-wrap">
             <image class="item-link-img" src="{{ item.image }}"></image>

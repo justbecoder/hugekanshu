@@ -17,8 +17,8 @@ exports.main = async (event, context) => {
   let openid = wxContext.OPENID
   let data = await db.collection('bookStore').where({
     openid
-  }).get('')
-  let bookStore = data.data[0].bookStore
+  }).get()
+  let [{ bookStore = [] }] = data.data
   let res
   if (!bookStore.length) {
     // 空书架 -- 插入

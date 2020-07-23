@@ -1,7 +1,21 @@
 <!--pages/bookStore/bookStore.wxml-->
 <view class="container">
   <view class="tabbar">
-    <view ontap="changeTab" data-tab="1" class="tab {{ tab === 1 ? 'active' : '' }}">书架</view>
+    <view ontap="changeTab" data-tab="1" class="tab {{ tab === 1 ? 'active' : '' }}">我的书架</view>
     <view ontap="changeTab" data-tab="2" class="tab {{ tab === 2 ? 'active' : '' }}">阅读记录</view>
+      
+  </view>
+  <!-- 书架 -->
+  <view class="book-store" wx:if="{{ tab == 1 }}">
+    <view class="list">
+      <view class="item" wx:for-index="{{index}}" wx:key="index" wx:for="{{ bookStore }}">
+        <navigator hover-class="none" class="item-link" url="{{'/pages/bookInfo/bookInfo?link=' + item.link}}">
+          <view class="item-link-img-wrap">
+            <image class="item-link-img" src="{{ item.image }}"></image>
+          </view>
+          <text class="item-link-text">{{ item.name }}</text>
+        </navigator>
+      </view>
+    </view>
   </view>
 </view>

@@ -14,21 +14,22 @@ cloud.init()
 charset(sp)
 
 // 定义搜索的地址
-const searchUrl = 'https://www.booktxt.com/search.php?keyword=';
+const searchUrl = 'https://www.booktxt.com/search.php?q=';
+
+// 网站地址
+const BASE_URL = 'https://www.booktxt.com'
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  // console.log(sp)
-  let html = await sp.get(searchUrl + escape(event.keyworld))
+  let html = await sp.get(searchUrl + encodeURIComponent(event.keyworld))
   let $ = cheerio.load(html.text)
-  // console.log($('.result-item'))
 
   let bookList = []
 
   $('.result-item').each(function () {
     bookList.push({
       name: $(this).find('.result-item-title span').text().trim(),
-      link: $(this).find('.result-item-title a').attr('href'),
+      link: BASE_URL + $(this).find('.result-item-title a').attr('href'),
       brief: $(this).find('.result-game-item-desc').text(),
       author: $(this).find('.result-game-item-info span').eq(1).text().trim(),
       image: $(this).find('.result-game-item-pic-link-img').attr('src')

@@ -18,6 +18,7 @@ cloud.init()
 exports.main = async (event, context) => {
   // 从event中获取参数
   let link = event.link
+  console.log(link)
   let html = await sp.get(link).charset('gbk')
   let $ = cheerio.load(html.text)
 
